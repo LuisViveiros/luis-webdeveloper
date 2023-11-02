@@ -154,6 +154,20 @@ p {
 .centered-about {
   position: relative;
 }
+.centered-about h1 {
+  transition: 2s ease-in-out;
+  transform: translate(-100vw, 0);
+}
+.centered-about .ms-header {
+  transition: 2s 1s ease-in-out;
+  transform: translate(-100vw, 0);
+}
+.centered-about.animation h1 {
+  transform: translate(0, 0);
+}
+.centered-about.animation .ms-header {
+  transform: translate(0, 0);
+}
 
 .ms-header {
   position: relative;
@@ -173,6 +187,17 @@ p {
   /*color: #fff;*/
   color: #F0EBD8;
   text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.4);
+}
+
+.panel {
+  position: relative;
+}
+
+.projects-title {
+  font-size: 128px;
+  position: absolute;
+  left: -7%;
+  transform: rotate(-90deg);
 }
 
 /* For best practice, move CSS below to an external CSS file. */
@@ -216,10 +241,14 @@ p {
   right: -40%;
   position: absolute;
   top: 50%;
+  transform: translate(0%, 110vh);
+  transition: 2s;
+}
+.img.animation {
   transform: translate(0%, -50%);
-  transition: 0.5s;
 }
 .img h2 {
+  display: none;
   pointer-events: none;
   text-align: center;
   font-size: 4rem;
@@ -333,12 +362,16 @@ a.socials svg {
 }
 .social-media::after {
   content: "";
-  margin-top: 15px;
+  margin-top: 5px;
   width: 3px;
-  height: 65px;
+  height: 100vh;
   background-color: #e36414;
   position: relative;
   display: block;
+  transition: 3s 3s ease-in-out;
+}
+.social-media.animation::after {
+  height: 45px;
 }
 
 div.custom-social svg {
@@ -346,15 +379,14 @@ div.custom-social svg {
           backdrop-filter: blur(0px);
   letter-spacing: 0.8px;
   font-size: 20px;
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
-  border-radius: 10px;
 }
 div.custom-social svg path {
   color: #3E5C76;
@@ -370,7 +402,7 @@ div.custom-social svg:hover path {
 
 .scroll-wheel {
   position: absolute;
-  bottom: 5%;
+  bottom: 0;
   display: grid;
 }
 
@@ -388,6 +420,19 @@ div.custom-social svg:hover path {
   transition: 0.5s;
   padding: 5px;
   color: #3E5C76;
+}
+
+.credits a {
+  transition: 0.5s;
+}
+.credits a:hover {
+  color: #e36414;
+  filter: drop-shadow(0 0 2px #e36414);
+}
+
+.right-side {
+  display: grid;
+  text-align: right;
 }
 
 @keyframes scroll {

@@ -165,6 +165,22 @@ p {
 }
 .centered-about{
   position: relative;
+  h1{
+    transition: 2s ease-in-out;
+    transform: translate(-100vw,0);
+  }
+  .ms-header{
+    transition: 2s 1s ease-in-out;
+    transform: translate(-100vw,0);
+  }
+  &.animation{
+    h1{
+      transform: translate(0,0);
+    }
+    .ms-header{
+      transform: translate(0,0);
+    }
+  }
 }
 .ms-header {
   position: relative;
@@ -186,6 +202,15 @@ p {
     color: $bege;
     text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.4);
   }
+}
+.panel{
+  position: relative;
+}
+.projects-title{
+  font-size: 128px;
+  position: absolute;
+  left: -7%;
+  transform: rotate(-90deg);
 }
 
 /* For best practice, move CSS below to an external CSS file. */
@@ -233,10 +258,14 @@ p {
   right: -40%;
   position: absolute;
   top: 50%;
-  transform: translate(0%, -50%);
+  transform: translate(0%, 110vh);
   //mix-blend-mode: luminosity;
-  transition: 0.5s;
+  transition: 2s;
+  &.animation{
+    transform: translate(0%, -50%);
+  }
   h2{
+    display: none;
     pointer-events: none;
     text-align: center;
     font-size: 4rem;
@@ -384,28 +413,34 @@ a {
   z-index: 999;
   &::after{
     content: '';
-    margin-top: 15px;
+    margin-top: 5px;
     width: 3px;
-    height: 65px;
+    height: 100vh;//45px
     background-color: $orange;
     position: relative;
     display: block;
+    transition: 3s 3s ease-in-out;
+  }
+  &.animation{
+    &::after{
+      height: 45px;
+    }
   }
 }
+
 div.custom-social {
   svg {
     backdrop-filter: blur(0px);
     letter-spacing: 0.8px;
     font-size: 20px;
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
-    border-radius: 10px;
     path{
       color: $detailBlue;
       fill: $detailBlue;
@@ -423,7 +458,7 @@ div.custom-social {
 }
 .scroll-wheel{
   position: absolute;
-  bottom: calc(5%);
+  bottom: 0;
   display: grid;
 }
 .scroll{
@@ -443,6 +478,20 @@ div.custom-social {
     color: $detailBlue;
     
   }
+}
+.credits{
+  a{
+    transition: 0.5s;
+    &:hover{
+      color: $orange;
+      filter: drop-shadow(0 0 2px $orange);
+    }
+  }
+}
+.right-side{
+  display: grid;
+  text-align: right;
+
 }
 
 @mixin white-gradient {

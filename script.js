@@ -1,33 +1,3 @@
-
-// Function to apply GSAP horizontal scroll when the display width is over 800px
-/*
-function applyHorizontalScroll() {
-    gsap.registerPlugin(ScrollTrigger);
-    let sections = gsap.utils.toArray(".panel");
-    gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".container",
-            pin: true,
-            scrub: 1,
-            snap: 1 / (sections.length - 1),
-            end: () => "+=" + (sections.length - 1) * window.innerWidth,
-        },
-    });
-}
-// Check the window width and apply the effect if it's over 800px
-if (window.innerWidth > 800) {
-    applyHorizontalScroll();
-}
-// Lenis initialization (always active)
-const lenis = new Lenis();
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-*/
 function applyHorizontalScroll() {
     gsap.registerPlugin(ScrollTrigger);
     const container = document.querySelector(".container");
@@ -51,15 +21,13 @@ function applyHorizontalScroll() {
 if (window.innerWidth > 800) {
     applyHorizontalScroll();
     // Lenis initialization (always active)
-const lenis = new Lenis();
-function raf(time) {
-    lenis.raf(time);
+    const lenis = new Lenis();
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
 }
-requestAnimationFrame(raf);
-}
-
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -74,4 +42,11 @@ window.addEventListener('beforeunload', function () {
     // For example, you can remove the scroll trigger or any other cleanup tasks.
     // Scroll to the top of the page before unloading
     window.scrollTo(0, 0);
+});
+
+$(document).ready(function() {
+    $(".social-media, .img, .centered-about").addClass("animation");
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene);
+    parallaxInstance.friction(0.2, 0.2);
 });
