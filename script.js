@@ -1,3 +1,20 @@
+const cursorRounded = document.querySelector('.rounded');
+const hoverTriggers = document.querySelectorAll('a, .text-guide');
+const moveCursor = (e)=> {
+    const mouseY = e.clientY - 15;
+    const mouseX = e.clientX - 15;
+    cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+}
+hoverTriggers.forEach(hoverTrigger => {
+    hoverTrigger.addEventListener('mouseover', () => {
+        cursorRounded.classList.add('large');
+    });
+    hoverTrigger.addEventListener('mouseout', () => {
+        cursorRounded.classList.remove('large');
+    });
+})
+window.addEventListener('mousemove', moveCursor);
+
 function applyHorizontalScroll() {
     gsap.registerPlugin(ScrollTrigger);
     const container = document.querySelector(".container");
@@ -18,7 +35,7 @@ function applyHorizontalScroll() {
     }
 }
 // Check the window width and apply the effect if it's over 800px
-if (window.innerWidth > 800) {
+if (window.innerWidth > 991) {
     applyHorizontalScroll();
     // Lenis initialization (always active)
     const lenis = new Lenis();
@@ -46,7 +63,7 @@ window.addEventListener('beforeunload', function () {
 
 $(document).ready(function() {
     $(".social-media, .img, .centered-about").addClass("animation");
-    var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene);
+    const scene = document.getElementById('scene');
+    const parallaxInstance = new Parallax(scene);
     parallaxInstance.friction(0.2, 0.2);
 });
