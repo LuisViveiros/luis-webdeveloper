@@ -91,6 +91,26 @@ h1 {
   text-align: center;
   font-size: 4rem;
 }
+footer{
+  h2{
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: 4rem!important;
+    position: relative;
+    &::before {
+      content: 'touch';
+      position: absolute;
+      right: 12px;
+      top: -2px;
+      z-index: -1;
+      color: rgb(227, 100, 20);
+      display: block;
+    }
+  }
+}
+
 p {
   font-size: 18px;
 }
@@ -440,7 +460,7 @@ a {
   &::after{
     content: '';
     margin-top: 5px;
-    width: 3px;
+    width: 1px;
     height: 100vh;//45px
     background-color: $orange;
     position: relative;
@@ -565,6 +585,9 @@ a:hover {
   box-sizing: border-box;
   flex-grow: 1;
   position: relative;
+  h2{
+    font-size: 40px;
+  }
 }
 
 footer{
@@ -872,7 +895,7 @@ footer{
     font-size: 4em;
     left: 0;
     width: 100%;
-    top: -100px;
+    top: -30px;
   }
   .panel:nth-of-type(2) {
     background: linear-gradient(180deg, rgb(13, 19, 33) 0%, rgb(29, 45, 68) 100%);
@@ -898,6 +921,14 @@ footer{
     padding-left: 30px;
     width: fit-content;
   }
+  footer{
+    h2{
+      text-align: center;
+      font-size: 36px!important;
+      width: 100%;
+    }
+  }
+
   .ms-header{
     width: fit-content;
     padding-left: 15px;
