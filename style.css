@@ -32,11 +32,12 @@ font-family: 'Work Sans', sans-serif;
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
 body {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-family: "Gabarito", sans-serif;
   background-color: #0D1321;
   color: #0b0b0b;
@@ -418,7 +419,7 @@ a.socials svg {
   background-color: #e36414;
   position: relative;
   display: block;
-  transition: 3s 3s ease-in-out;
+  transition: 2s 2s ease-in-out;
 }
 .social-media.animation::after {
   height: 45px;
@@ -764,7 +765,39 @@ footer {
     float: left;
   }
 }
+@media (width <= 1399px) {
+  .row.grid3 {
+    max-width: 991px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .row.grid3 .col-4, .row.grid3 img {
+    height: 260px;
+  }
+}
 @media (width <= 991px) {
+  section.social-media {
+    padding: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #e36414;
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    filter: drop-shadow(2px 4px 6px black);
+    grid-template-columns: 1fr 1fr 1fr;
+    height: -moz-fit-content;
+    height: fit-content;
+    gap: 0;
+  }
+  section.social-media svg {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  section.social-media::after {
+    content: none;
+  }
   header {
     width: 100% !important;
     padding: 25px 0 !important;
@@ -792,21 +825,6 @@ footer {
     padding: 30px 40px 0 !important;
     box-sizing: border-box;
     position: absolute !important;
-  }
-  div.custom-social svg {
-    font-size: 15px;
-    width: 15px;
-    height: 15px;
-  }
-  .social-media {
-    left: 5px;
-    gap: 10px;
-  }
-  .social-media::after {
-    width: 1px !important;
-  }
-  .social-media.animation::after {
-    height: 30px;
   }
   .projects-title {
     position: relative;

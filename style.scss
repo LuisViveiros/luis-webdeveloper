@@ -39,10 +39,11 @@ $bege: #F0EBD8;
 }
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden!important;
 }
 body {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden!important;
   font-family: "Gabarito", sans-serif;
   background-color: $bgBlue;
   color: #0b0b0b;
@@ -465,7 +466,7 @@ a {
     background-color: $orange;
     position: relative;
     display: block;
-    transition: 3s 3s ease-in-out;
+    transition: 2s 2s ease-in-out;
   }
   &.animation{
     &::after{
@@ -845,7 +846,40 @@ footer{
   }
 }
 
+@media (width<= 1399px) {
+  .row{
+    &.grid3{
+      max-width: 991px;
+      margin: 0 auto;
+      width: 100%;
+      .col-4,img{
+        height: 260px;
+      }
+    }
+  }
+}
+
 @media (width <= 991px){
+  section.social-media{
+    padding: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #e36414;
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(2px 4px 6px black);
+    grid-template-columns: 1fr 1fr 1fr;
+    height: fit-content;
+    gap: 0;
+    svg {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+    &::after{
+      content: none;
+    }
+  }
   header{
     width: 100%!important;
     padding: 25px 0!important;
@@ -873,21 +907,6 @@ footer{
       box-sizing: border-box;
       position: absolute!important;
     }
-  }
-  div.custom-social svg {
-    font-size: 15px;
-    width: 15px;
-    height: 15px;
-  }
-  .social-media{
-    left: 5px;
-    gap: 10px;
-  }
-  .social-media::after {
-    width: 1px!important;
-  }
-  .social-media.animation::after {
-    height: 30px;
   }
   .projects-title{
     position: relative;

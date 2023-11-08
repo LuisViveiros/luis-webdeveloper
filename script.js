@@ -1,3 +1,53 @@
+const sr = ScrollReveal();
+sr.reveal(".icon-tools .text-guide", {
+    delay: 200,
+    reset:true,
+    easing: "ease-out",
+    interval: 200,
+    scale: 1.5,
+});
+
+sr.reveal(".scroll-wheel", {
+    origin:'bottom',
+    distance: '100%',
+    delay: 2000,
+    reset:true,
+    easing: "ease-out",
+    interval: 200,
+    scale: 1.5,
+    opacity:0
+});
+
+sr.reveal(".download-btn", {
+    origin:'left',
+    distance: '100%',
+    delay: 500,
+    reset:true,
+    easing: "ease-out",
+    interval: 200,
+    scale: 1.5,
+});
+sr.reveal("footer h2", {
+    origin:'top',
+    distance: '100%',
+    delay: 200,
+    reset:true,
+    easing: "ease-out",
+    interval: 200,
+    scale: 1.5,
+});
+sr.reveal("small", {
+    origin:'bottom',
+    distance: '100%',
+    delay: 500,
+    reset:true,
+    easing: "ease-out",
+    interval: 200,
+    scale: 1.5,
+});
+
+
+
 const cursorRounded = document.querySelector('.rounded');
 const hoverTriggers = document.querySelectorAll('a, .text-guide');
 const moveCursor = (e)=> {
